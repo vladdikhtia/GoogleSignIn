@@ -1,5 +1,6 @@
 package com.example.firebasegooglesignin.presentation.sign_in
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -37,7 +38,11 @@ fun SignInScreen(
             .padding(16.dp),
         contentAlignment = Alignment.Center
     ) {
-        Button(onClick = onSignInClick) {
+        Button(
+            onClick = {
+                Log.d("SignInScreen", "Sign-in button clicked")
+                onSignInClick()
+            }) {
             Text(text = "Sign In")
         }
     }
